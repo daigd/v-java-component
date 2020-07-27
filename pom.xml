@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.v.component</groupId>
+	<artifactId>my-java-component</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<modules>
+		<module>component-springcloud</module>
+	</modules>
+	<packaging>pom</packaging>
+	
+	<properties>
+		<component-version>1.0.0-SNAPSHOT</component-version>
+<!--		<springboot.version>2.2.9.RELEASE</springboot.version>-->
+<!--		<springcloud.version>Hoxton</springcloud.version>-->
+		<springboot.version>2.0.4.RELEASE</springboot.version>
+		<springcloud.version>Finchley.SR1</springcloud.version>
+	</properties>
+
+	<!-- 发布生产时用此profile把所有组件更新为release，覆盖上面配置 -->
+	<profiles>
+		<profile>
+			<id>release</id>
+			<properties>
+				<component-version>1.0.0-release</component-version>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<!-- 所有项目统一发布地址 -->
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<uniqueVersion>false</uniqueVersion>-->
+<!--			<id>releases</id>-->
+<!--			<name>Internal Repository</name>-->
+<!--			<url></url>-->
+<!--		</repository>-->
+<!--		<snapshotRepository>-->
+<!--			<uniqueVersion>true</uniqueVersion>-->
+<!--			<id>snapshots</id>-->
+<!--			<name>Internal Snapshots</name>-->
+<!--			<url></url>-->
+<!--		</snapshotRepository>-->
+<!--	</distributionManagement>-->
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerArgument>-parameters</compilerArgument>
+					<testCompilerArgument>-parameters</testCompilerArgument>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencyManagement>
+		<dependencies>
+			<!-- SpringBoot与SpringCloud版本 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${springcloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
