@@ -133,7 +133,17 @@
 				<version>1.7.5</version>
 			</dependency>
 			<!-- log4j -->
-			
+			<!--自定义业务基础包-->
+			<dependency>
+				<groupId>v-java-component</groupId>
+				<artifactId>component-common</artifactId>
+				<version>${component-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>v-java-component</groupId>
+				<artifactId>component-springcloud</artifactId>
+				<version>${component-version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>

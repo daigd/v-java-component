@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>component-common</artifactId>
-
-
+    <name>component-common</name>
+    <version>${component-version}</version>
+    <description>一些通用的工具类及常量</description>
+    
 </project>
