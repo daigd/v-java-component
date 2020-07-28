@@ -1,4 +1,4 @@
-# my-java-component
+# v-java-component
 自用的Java通用微服务开发组件，在各个开源组件上做了一点小封装，与具体业务无关，相关特性如下：
 
 - [x] 基于SpringCloud微服务框架
