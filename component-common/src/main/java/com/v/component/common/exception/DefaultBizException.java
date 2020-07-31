@@ -7,4 +7,8 @@ package com.v.component.common.exception;
  */
 public class DefaultBizException extends AbstractBizException
 {
+    public DefaultBizException(String message)
+    {
+        super(message);
+    }
 }

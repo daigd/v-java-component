@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.v.component.rule.engine.config.RuleEngineAutoConfiguration

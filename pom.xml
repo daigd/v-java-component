@@ -9,6 +9,7 @@
 		<module>component-springcloud</module>
 		<module>component-common</module>
 		<module>component-gateway</module>
+		<module>component-rule-engine</module>
 	</modules>
 	<packaging>pom</packaging>
 	
