@@ -24,6 +24,7 @@
         <dependency>
             <groupId>org.v.component</groupId>
             <artifactId>component-common</artifactId>
+            <version>${component-version}</version>
         </dependency>
         <!-- lombok工具 begin -->
         <dependency>

@@ -1,5 +1,6 @@
 package com.v.component.rule.engine.scheduler;
 
+import com.v.component.common.constant.CommonStatus;
 import com.v.component.rule.engine.core.ExecuteResult;
 import com.v.component.rule.engine.core.RuleSchedulerBuilder;
 import com.v.component.rule.engine.rules.NormalStatusCheck;
@@ -67,8 +68,8 @@ public class DemoSchedulerTest
         Facts facts = new Facts();
         facts.put("beginTime", now.getTime() - one_day * 3);
         facts.put("endTime", now.getTime() + one_day * 4);
-        facts.put("status", -1);
-
+        facts.put("status", CommonStatus.FORBIDDEN.getStatus());
+        
         DemoScheduler scheduler = (DemoScheduler) ruleSchedulerBuilder
                 .newScheduler(DemoScheduler.class).withRulesEngine()
                 .withRule(timeRangeCheck)
@@ -90,7 +91,7 @@ public class DemoSchedulerTest
         Facts facts = new Facts();
         facts.put("beginTime", now.getTime() - one_day * 3);
         facts.put("endTime", now.getTime() + one_day * 4);
-        facts.put("status", -1);
+        facts.put("status", CommonStatus.FORBIDDEN.getStatus());
 
         DemoScheduler scheduler = (DemoScheduler) ruleSchedulerBuilder
                 .newScheduler(DemoScheduler.class).withRulesEngine()
@@ -109,7 +110,7 @@ public class DemoSchedulerTest
         facts = new Facts();
         facts.put("beginTime", now.getTime() - one_day * 3);
         facts.put("endTime", now.getTime() + one_day * 4);
-        facts.put("status", -1);
+        facts.put("status", CommonStatus.FORBIDDEN.getStatus());
 
         scheduler = (DemoScheduler) ruleSchedulerBuilder
                 .newScheduler(DemoScheduler.class).withRulesEngine()

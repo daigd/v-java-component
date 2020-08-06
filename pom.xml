@@ -134,7 +134,7 @@
 				<version>1.7.5</version>
 			</dependency>
 			<!-- log4j -->
-			<!--自定义业务基础包-->
+			<!--自定义业务基础包 begin-->
 			<dependency>
 				<groupId>v-java-component</groupId>
 				<artifactId>component-common</artifactId>
@@ -145,6 +145,12 @@
 				<artifactId>component-springcloud</artifactId>
 				<version>${component-version}</version>
 			</dependency>
+			<dependency>
+				<groupId>v-java-component</groupId>
+				<artifactId>component-rule-engine</artifactId>
+				<version>${component-version}</version>
+			</dependency>
+			<!--自定义业务基础包 end-->
 		</dependencies>
 	</dependencyManagement>
 </project>
