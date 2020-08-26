@@ -1,0 +1,17 @@
+name: 测试规则
+description: 这是规则描述
+priority: 1
+given:
+  userId: 212
+  userName: David
+when:
+  def d = discountService.queryDiscountByUserId(userId); 
+  println("discount:"+d);
+  log.info("discount:{}",d);
+  d > 2
+then:
+  - println testService.hi();
+    println userId;
+    log.info("userId:{},userName:{}",userId,userName)
+  - println userName;
+    log.info("userId:{},userName:{}",userId,userName)

@@ -15,12 +15,17 @@
 	
 	<properties>
 		<component-version>1.0.0-SNAPSHOT</component-version>
-		<springboot.version>2.2.4.RELEASE</springboot.version>
-		<springcloud.version>Hoxton.SR5</springcloud.version>
+		<springboot.version>2.2.8.RELEASE</springboot.version>
+		<springcloud.version>Hoxton.SR6</springcloud.version>
+		<fastjson.version>1.2.60</fastjson.version>
 		<lombok.version>1.18.4</lombok.version>
-		<sharding-sphere.version>4.0.0-RC2</sharding-sphere.version>
+		<guava.version>20.0</guava.version>
+		<sharding-sphere.version>4.1.1</sharding-sphere.version>
 		<mysql-connector-java.version>5.1.42</mysql-connector-java.version>
 		<mybatis-plus.version>3.3.1.tmp</mybatis-plus.version>
+		<groovy.version>2.5.12</groovy.version>
+		<spock.version>2.0-M2-groovy-2.5</spock.version>
+		<snakeyaml.version>1.26</snakeyaml.version>
 	</properties>
 
 	<!-- 发布生产时用此profile把所有组件更新为release，覆盖上面配置 -->
@@ -117,6 +122,40 @@
 				<version>${lombok.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<!-- groovy -->
+			<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>${groovy.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+			<dependency>
+				<groupId>org.yaml</groupId>
+				<artifactId>snakeyaml</artifactId>
+				<version>${snakeyaml.version}</version>
+			</dependency>
+
+
+			<!--spock-->
+			<dependency>
+				<groupId>org.spockframework</groupId>
+				<artifactId>spock-core</artifactId>
+				<version>${spock.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.spockframework</groupId>
+				<artifactId>spock-spring</artifactId>
+				<version>${spock.version}</version>
+				<scope>test</scope>
+			</dependency>
 			<!-- log4j slf4j-api提供接口，slf4j-log4j提供具体的实现-->
 			<dependency>
 				<groupId>log4j</groupId>
@@ -134,6 +173,11 @@
 				<version>1.7.5</version>
 			</dependency>
 			<!-- log4j -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
 			<!--自定义业务基础包 begin-->
 			<dependency>
 				<groupId>v-java-component</groupId>

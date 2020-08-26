@@ -1,0 +1,12 @@
+name: 测试规则
+description: 这是规则描述
+priority: 1
+given:
+  userId: 212
+  userName: David
+expect:
+  - println testService.hi();
+    println userId;
+    log.info("userId:{},userName:{}",userId,userName)
+  - log.info testService.hi(userName);
+    log.info("userId:{},userName:{}",userId,userName)

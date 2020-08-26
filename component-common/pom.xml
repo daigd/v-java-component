@@ -14,4 +14,10 @@
     <version>${component-version}</version>
     <description>一些通用的工具类及常量</description>
     
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,0 +1,15 @@
+import org.jeasy.rules.api.Condition
+import org.jeasy.rules.api.Facts
+
+/**
+ * @author : DaiGD
+ * @createtime :  2020年08月25日 15:24
+ * @description : 规则脚本模板
+ */
+class RuleCondition_%s implements Condition{
+
+    @Override
+    boolean evaluate(Facts facts) {
+        %s
+    }
+}
