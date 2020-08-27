@@ -41,17 +41,15 @@
         <dependency>
             <groupId>org.jeasy</groupId>
             <artifactId>easy-rules-core</artifactId>
-            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
-            <version>2.6.2</version>
         </dependency>
         <!--groovy-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
+            <artifactId>groovy</artifactId>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
@@ -85,7 +83,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        
     </dependencies>
 
     <build>
@@ -94,7 +92,7 @@
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>1.6</version>
+                <version>1.5</version>
                 <executions>
                     <execution>
                         <goals>
@@ -103,6 +101,40 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!--加上Groovy编译插件,不然生成的jar包会没有Groovy代码-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version><!-- 3.6.2 is the minimum -->
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <compilerArguments>
+                        <!--使用到lombok插件,需要加上该配置-->
+                        <!-- consult Lombok docs to confirm agent class name for your version -->
+                        <javaAgentClass>lombok.launch.Agent</javaAgentClass>
+                    </compilerArguments>
+                    <fork>true</fork>
+                    <failOnWarning>true</failOnWarning><!-- optional; supported by batch 2.5.8-02+ -->
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>${lombok.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>3.4.0-01</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <!--${groovy.version}-01-->
+                        <version>2.5.12-01</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
