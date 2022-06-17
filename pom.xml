@@ -17,7 +17,7 @@
 		<component-version>1.0.0-SNAPSHOT</component-version>
 		<springboot.version>2.2.8.RELEASE</springboot.version>
 		<springcloud.version>Hoxton.SR6</springcloud.version>
-		<fastjson.version>1.2.60</fastjson.version>
+		<fastjson.version>1.2.83</fastjson.version>
 		<lombok.version>1.18.4</lombok.version>
 		<guava.version>20.0</guava.version>
 		<sharding-sphere.version>4.1.1</sharding-sphere.version>
