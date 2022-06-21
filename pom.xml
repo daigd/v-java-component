@@ -21,7 +21,7 @@
 		<lombok.version>1.18.4</lombok.version>
 		<guava.version>20.0</guava.version>
 		<sharding-sphere.version>4.1.1</sharding-sphere.version>
-		<mysql-connector-java.version>5.1.42</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 		<mybatis-plus.version>3.3.1.tmp</mybatis-plus.version>
 		<groovy.version>2.5.12</groovy.version>
 		<spock.version>2.0-M2-groovy-2.5</spock.version>
