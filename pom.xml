@@ -25,7 +25,7 @@
 		<mybatis-plus.version>3.3.1.tmp</mybatis-plus.version>
 		<groovy.version>2.5.12</groovy.version>
 		<spock.version>2.0-M2-groovy-2.5</spock.version>
-		<snakeyaml.version>1.26</snakeyaml.version>
+		<snakeyaml.version>1.32</snakeyaml.version>
 		<easy.rules.version>4.0.0</easy.rules.version>
 	</properties>
 
